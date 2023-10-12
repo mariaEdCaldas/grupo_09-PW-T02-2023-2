@@ -23,4 +23,4 @@ npm run build
 ```
 
 ## What is this project?
-That project is a front-end application built as an universitary webdev subject  work. 
+That project is a front-end application built as an college webdev subject  work. 
