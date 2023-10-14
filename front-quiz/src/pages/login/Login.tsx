@@ -1,18 +1,14 @@
-import EntryForm from "../components/form/entryForm/EntryForm";
-import FormBottomAction from "../components/form/formBottomAction/FormBottomAction";
-import TextInput from "../components/form/inputs/TextInput";
+import EntryForm from "../../components/form/entryForm/EntryForm";
+import FormBottomAction from "../../components/form/formBottomAction/FormBottomAction";
+import TextInput from "../../components/form/inputs/TextInput";
+import "./Login.scss";
 
-export default function Registrar() {
+export default function Login() {
     return (
         <EntryForm
-            title="Registrar"
+            title="Login"
             inputs={
                 <>
-                    <TextInput
-                        id="name"
-                        label="Nome"
-                        required
-                    ></TextInput>
                     <TextInput
                         id="email"
                         label="E-mail"
@@ -31,8 +27,12 @@ export default function Registrar() {
             bottom={
                 <>
                     <FormBottomAction
-                        label="Já possuo um login"
-                        target="/login"
+                        label="Esqueci minha senha"
+                        target="/reset-pass"
+                    />
+                    <FormBottomAction
+                        label="Não tenho cadastro"
+                        target="/registrar"
                     />
                 </>
             }

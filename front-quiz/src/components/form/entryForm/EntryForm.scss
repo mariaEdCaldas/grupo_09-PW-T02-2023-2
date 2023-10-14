@@ -1,0 +1,42 @@
+$submit-button-color: hsl(115, 36%, 45%);
+$submit-button-color-hover: hsl(115, 36%, 55%);
+
+.entry-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.entry-form{
+    display: flex;
+    flex-direction: column;
+    width: 30rem;
+    &>.entry-form-submit-button{
+        width: 150px;
+        height: 40px;
+        cursor: pointer;
+        background-color: $submit-button-color;
+        border-radius: 10px;
+        font-weight: 500;
+        color: white;
+        border: solid 2px #3F3F3F;
+        margin-left: auto;
+        transition: background-color .3s ease-in-out;
+        margin-top: 2rem;
+        &:hover{
+            background-color: $submit-button-color-hover;
+        }
+    }
+}
+.inputs-container{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.entry-form-title{
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 3.4375rem;
+}

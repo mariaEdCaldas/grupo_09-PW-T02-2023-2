@@ -1,0 +1,19 @@
+$submit-button-color: hsl(115, 36%, 45%);
+$submit-button-color-hover: hsl(115, 36%, 55%);
+
+.green-button{
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    background-color: $submit-button-color;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    border: solid 2px #3F3F3F;
+    margin-left: auto;
+    transition: background-color .3s ease-in-out;
+    margin-top: 2rem;
+    &:hover{
+        background-color: $submit-button-color-hover;
+    }
+}
