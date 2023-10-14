@@ -1,6 +1,6 @@
 import EntryForm from "../../components/form/entryForm/EntryForm";
 import FormBottomAction from "../../components/form/formBottomAction/FormBottomAction";
-import TextInput from "../../components/form/inputs/TextInput";
+import TextInput from "../../components/form/inputs/textInput/TextInput";
 import "./Login.scss";
 
 export default function Login() {

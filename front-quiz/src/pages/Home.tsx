@@ -1,10 +1,10 @@
-import TextInput from "../components/form/inputs/TextInput";
+import SelectInput from "../components/form/inputs/selectInput/SelectInput";
 
 export default function Home() {
     return (
         <>
             <h1>Home</h1>
-            <TextInput id="asd" label="E-mail"></TextInput>
+            <SelectInput id="asd" placeholder="Escolha!" options={["asd", "abc"]}></SelectInput>
         </>
     );
 }

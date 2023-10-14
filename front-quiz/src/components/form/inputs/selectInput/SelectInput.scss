@@ -1,0 +1,36 @@
+$input-border-color: #3F3F3F;
+$input-border-size: 2px;
+$input-border-radius: 10px;
+.select-input-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .3rem;
+    & *{
+        font-weight: 500;
+    }
+}
+.select-input-label{
+    padding-left: 1rem;
+    font-size: .875rem;
+}
+.select-input {
+    border: $input-border-size solid $input-border-color;
+    border-radius: $input-border-radius;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='black'><polygon points='0,0 16,0 8,16'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 1rem);
+    background-position-y: 50%;
+    background-size: 0.75rem;
+}
+input[type="password"]{
+    letter-spacing: .1rem;
+
+}

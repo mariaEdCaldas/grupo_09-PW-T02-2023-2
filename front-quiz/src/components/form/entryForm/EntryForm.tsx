@@ -20,7 +20,7 @@ export default function EntryForm({title, inputs, bottom, submitLabel, onSubmit}
                 <FormBottom>
                     {bottom && bottom}
                 </FormBottom>
-                <GreenButton>{submitLabel}</GreenButton>
+                <GreenButton type="submit">{submitLabel}</GreenButton>
             </form>
         </div>
     );

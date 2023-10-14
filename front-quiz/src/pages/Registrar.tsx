@@ -1,6 +1,6 @@
 import EntryForm from "../components/form/entryForm/EntryForm";
 import FormBottomAction from "../components/form/formBottomAction/FormBottomAction";
-import TextInput from "../components/form/inputs/TextInput";
+import TextInput from "../components/form/inputs/textInput/TextInput";
 
 export default function Registrar() {
     return (
@@ -27,7 +27,7 @@ export default function Registrar() {
                     ></TextInput>
                 </>
             }
-            submitLabel="Entrar"
+            submitLabel="Vamos lá!"
             bottom={
                 <>
                     <FormBottomAction
