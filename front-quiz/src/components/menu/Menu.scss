@@ -1,4 +1,5 @@
 $active-color: #D18641;
+$hover-color: hsl(29, 61%, 40%);
 
 .menu-container{
     width: 100%;
@@ -27,8 +28,15 @@ $active-color: #D18641;
     gap: 1rem;
 }
 .menu-item{
+    transition: color .3s ease-in-out;
     &.active{
-        color: $active-color
+        color: $active-color;
+        &:hover{
+            color: $active-color;
+        }
+    }
+    &:hover{
+        color: $hover-color;
     }
 }
 

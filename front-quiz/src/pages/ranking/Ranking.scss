@@ -1,0 +1,17 @@
+.ranking-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3.625rem;
+    gap: 6.3125rem
+}
+.ranking-title{
+    font-size: 1.25rem;
+}
+
+.ranking-players-list{
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+}

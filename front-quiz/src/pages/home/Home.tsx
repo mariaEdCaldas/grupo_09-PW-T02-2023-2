@@ -18,9 +18,9 @@ export default function Home() {
                     </div>
                 </div>
                 <div className="game-list-container">
-                    <GameCard category="Geografia" difficulty="Moleza" name="A vida no semi-árido"/>
-                    <GameCard category="Geografia" difficulty="Desafiador" name="Sobre as planícies"/>
-                    <GameCard category="Geografia" difficulty="Impossível" name="Irlanda do norte"/>
+                    <GameCard id="vida-semi-arido" category="Geografia" difficulty="Moleza" name="A vida no semi-árido"/>
+                    <GameCard id="planicies" category="Geografia" difficulty="Desafiador" name="Sobre as planícies"/>
+                    <GameCard id="irlanda-do-norte" category="Geografia" difficulty="Impossível" name="Irlanda do norte"/>
 
                 </div>
             </div>

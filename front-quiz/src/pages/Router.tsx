@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./home/Home";
 import Login from "./login/Login";
 import Registrar from "./Registrar";
-import Ranking from "./Ranking";
+import Ranking from "./ranking/Ranking";
 import Quiz from "./Quiz";
 import QuizBuilder from "./QuizBuilder";
 import QuestionBuilder from "./QuestionBuilder";
@@ -17,6 +17,7 @@ export default function Router() {
             <Route path="/play" Component={Quiz}></Route>
             <Route path="/create-quiz" Component={QuizBuilder}></Route>
             <Route path="/create-question" Component={QuestionBuilder}></Route>
+            <Route path="/play-quiz/:id" Component={Quiz}></Route>
         </Routes>
     );
 }

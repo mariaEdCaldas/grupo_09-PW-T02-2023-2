@@ -1,0 +1,90 @@
+$ranking-card-border-color: #3F3F3F;
+$current-player-color: #D18641;
+.ranking-card{
+    width: 20.5rem;
+    height: 6.19rem;
+    padding: 1rem 1.75rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+
+    border: $ranking-card-border-color solid 2px;
+    border-radius: 20px;
+    filter: none;
+    transition: filter .3s ease-in-out;
+    &:hover{
+        // add a filter to the background
+        filter: brightness(1.1);
+    }
+
+    & *{
+        color: hsl(0, 0%, 20%);
+    }
+
+    & .left-side{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 20%;
+    }
+    & .right-side{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 80%;
+    }
+
+    &.current-player-rank{
+        border-color: $current-player-color;
+        & *{
+            color: $current-player-color;
+            border-color: $current-player-color;
+        }
+    }
+}
+
+.play-button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+}
+.ranking-difficulty-container{
+    width: fit-content;
+    & .ranking-difficulty{
+        font-size: .75rem;
+    }
+}
+
+.ranking-title-container{
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 2.5rem;
+    & .ranking-title{
+        width: fit-content;
+        height: fit-content;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+}
+.ranking-desc-container{
+    width: fit-content;
+    & .ranking-desc{
+        width: fit-content;
+        font-size: .75rem;
+    }
+}
+
+.ranking-card-bottom-container{
+    margin-top:.35rem;
+}
+
+@media (max-width: 300px){
+    .play-button-container{
+        & *{
+            scale: 0.8;
+        }
+    }
+}
+    
