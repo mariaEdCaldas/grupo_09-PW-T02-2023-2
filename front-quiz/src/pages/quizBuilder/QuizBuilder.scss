@@ -1,0 +1,55 @@
+$quiz-builder-container-width: 29rem;
+.quiz-builder-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+.quiz-builder-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 3.625rem;
+    width: $quiz-builder-container-width;
+    max-width: 100%;
+}
+.quiz-builder-title{
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+.quiz-builder-form{
+    width: 100%;
+    & .half{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: .5rem;
+        row-gap: 1rem;
+        & .quiz-builder-input-container{
+            width: 14.19rem;
+        }
+    }
+}
+.quiz-builder-form-inputs{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    width: 100%;
+}
+
+@media (max-width: 658px) {
+    $quiz-builder-container-width: 100%;
+    .quiz-builder-container{
+        width: $quiz-builder-container-width;
+    }
+    .quiz-builder-form{
+        & .half{
+            & .quiz-builder-input-container{
+                width: 100%;
+            }
+        }
+    }
+}

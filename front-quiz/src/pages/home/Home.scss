@@ -24,3 +24,20 @@
     gap: 3.56rem;
     row-gap: 1.5rem;
 }
+
+@media (max-width: 690px) {
+    .game-search-category-container{
+        width: 100%;
+    }
+    .game-search-difficulty-container{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 518px) {
+    .game-list-container{
+        justify-content: center;
+    }
+
+}

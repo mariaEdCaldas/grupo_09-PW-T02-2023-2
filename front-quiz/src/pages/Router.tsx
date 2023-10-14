@@ -4,7 +4,7 @@ import Login from "./login/Login";
 import Registrar from "./Registrar";
 import Ranking from "./ranking/Ranking";
 import Quiz from "./Quiz";
-import QuizBuilder from "./QuizBuilder";
+import QuizBuilder from "./quizBuilder/QuizBuilder";
 import QuestionBuilder from "./QuestionBuilder";
 
 export default function Router() {
