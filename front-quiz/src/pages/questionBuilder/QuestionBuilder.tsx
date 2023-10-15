@@ -15,7 +15,7 @@ export default function QuestionBuilder() {
                     onSubmit={handleSubmit}
                 >
                     <div className="question-builder-name-container">
-                        <TextInput
+                        <TextInput required
                             label="Enunciado questão"
                             placeholder="Insira o enunciado da questão"
                             id="question-statement"
@@ -24,10 +24,11 @@ export default function QuestionBuilder() {
                     <div className="question-builder-answers-container">
                         <div className="question-builder-answer-container">
                             <div className="question-builder-answer">
-                                <TextInput type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="A" id="question-answer-a" />
+                                <TextInput required type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="A" id="question-answer-a" />
                             </div>
                             <input
                                 type="radio"
+                                required
                                 className="question-builder-answer-indicator"
                                 radioGroup="right-answer"
                                 name="right-answer"
@@ -37,10 +38,11 @@ export default function QuestionBuilder() {
                         </div>
                         <div className="question-builder-answer-container">
                             <div className="question-builder-answer">
-                                <TextInput type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="B" id="question-answer-b" />
+                                <TextInput required type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="B" id="question-answer-b" />
                             </div>
                             <input
                                 type="radio"
+                                required
                                 className="question-builder-answer-indicator"
                                 radioGroup="right-answer"
                                 name="right-answer"
@@ -50,10 +52,11 @@ export default function QuestionBuilder() {
                         </div>
                         <div className="question-builder-answer-container">
                             <div className="question-builder-answer">
-                                <TextInput type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="C" id="question-answer-c" />
+                                <TextInput required type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="C" id="question-answer-c" />
                             </div>
                             <input
                                 type="radio"
+                                required
                                 className="question-builder-answer-indicator"
                                 radioGroup="right-answer"
                                 name="right-answer"
@@ -63,10 +66,11 @@ export default function QuestionBuilder() {
                         </div>
                         <div className="question-builder-answer-container">
                             <div className="question-builder-answer">
-                                <TextInput type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="D" id="question-answer-d" />
+                                <TextInput required type="textarea" maxLength={maxAnswerLength} className="question-builder-answer-input" label="D" id="question-answer-d" />
                             </div>
                             <input
                                 type="radio"
+                                required
                                 className="question-builder-answer-indicator"
                                 radioGroup="right-answer"
                                 name="right-answer"
