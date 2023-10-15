@@ -11,16 +11,19 @@ export default function Registrar() {
                     <TextInput
                         id="name"
                         label="Nome"
+                        placeholder="Insira seu nome"
                         required
                     ></TextInput>
                     <TextInput
                         id="email"
+                        placeholder="seu@email.com"
                         label="E-mail"
                         type="email"
                         required
                     ></TextInput>
                     <TextInput
                         id="password"
+                        placeholder="Insira uma senha"
                         label="Senha"
                         type="password"
                         required

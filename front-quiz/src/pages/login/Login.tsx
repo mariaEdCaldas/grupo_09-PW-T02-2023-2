@@ -12,12 +12,14 @@ export default function Login() {
                     <TextInput
                         id="email"
                         label="E-mail"
+                        placeholder="seu@email.com"
                         type="email"
                         required
                     ></TextInput>
                     <TextInput
                         id="password"
                         label="Senha"
+                        placeholder="Insira uma senha"
                         type="password"
                         required
                     ></TextInput>

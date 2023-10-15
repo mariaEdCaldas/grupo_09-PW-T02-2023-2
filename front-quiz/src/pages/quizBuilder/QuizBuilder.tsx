@@ -27,6 +27,7 @@ export default function QuizBuilder() {
                             <TextInput
                                 id="quiz-name"
                                 label="Nome questionário"
+                                placeholder="Insira o nome do questionário"
                                 required
                             />
                         </div>
