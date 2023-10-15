@@ -5,7 +5,7 @@ import Registrar from "./Registrar";
 import Ranking from "./ranking/Ranking";
 import Quiz from "./Quiz";
 import QuizBuilder from "./quizBuilder/QuizBuilder";
-import QuestionBuilder from "./QuestionBuilder";
+import QuestionBuilder from "./questionBuilder/QuestionBuilder";
 
 export default function Router() {
     return (
