@@ -3,7 +3,7 @@ import Home from "./home/Home";
 import Login from "./login/Login";
 import Registrar from "./Registrar";
 import Ranking from "./ranking/Ranking";
-import Quiz from "./Quiz";
+import Quiz from "./quiz/Quiz";
 import QuizBuilder from "./quizBuilder/QuizBuilder";
 import QuestionBuilder from "./questionBuilder/QuestionBuilder";
 

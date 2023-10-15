@@ -1,19 +1,24 @@
-import "./GreenButton.scss"
-interface GreenButtonProps {
+import "./DefaultButton.scss"
+interface DefaultButtonProps {
     children: string;
     type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+    backgroundColor?: string;
+    color?: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-export default function GreenButton({
+export default function DefaultButton({
     children: label,
-    type, onClick
-}: GreenButtonProps) {
+    type, onClick,
+    backgroundColor,
+    color
+}: DefaultButtonProps) {
     return (
         <button
             type={type || "button"}
-            className="green-button"
+            className="default-button"
             onClick={(onClick && type == "button") ? onClick : undefined}
+            style={{backgroundColor:backgroundColor, color:color}}
         >
             {label}
         </button>

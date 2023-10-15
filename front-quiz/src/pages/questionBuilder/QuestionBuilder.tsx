@@ -1,4 +1,4 @@
-import GreenButton from "../../components/buttons/GreenButton";
+import DefaultButton from "../../components/buttons/DefaultButton";
 import TextInput from "../../components/form/inputs/textInput/TextInput";
 import "./QuestionBuilder.scss";
 
@@ -81,7 +81,7 @@ export default function QuestionBuilder() {
                         </div>
                     </div>
                     <div className="question-builder-submit-btn-container">
-                        <GreenButton type="submit">Salvar</GreenButton>
+                        <DefaultButton type="submit">Salvar</DefaultButton>
                     </div>
                 </form>
             </div>

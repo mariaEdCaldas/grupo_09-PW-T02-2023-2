@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import GreenButton from "../../components/buttons/GreenButton";
+import DefaultButton from "../../components/buttons/DefaultButton";
 import RoundThinButton from "../../components/buttons/RoundThinButton";
 import SelectInput from "../../components/form/inputs/selectInput/SelectInput";
 import TextInput from "../../components/form/inputs/textInput/TextInput";
@@ -66,7 +66,7 @@ export default function QuizBuilder() {
                         <div className="quiz-builder-form-questions"></div>
                     </div>
                     <div className="quiz-builder-submit-btn-container">
-                        <GreenButton type="submit">Criar</GreenButton>
+                        <DefaultButton type="submit">Criar</DefaultButton>
                     </div>
                 </form>
             </div>

@@ -1,6 +1,6 @@
 import "./EntryForm.scss"
 import FormBottom from "../formBottomAction/FormBottom";
-import GreenButton from "../../buttons/GreenButton";
+import DefaultButton from "../../buttons/DefaultButton";
 
 interface EntryFormProps {
     title?: string;
@@ -21,7 +21,7 @@ export default function EntryForm({title, inputs, bottom, submitLabel, onSubmit}
                     {bottom && bottom}
                 </FormBottom>
                 <div className="entry-form-submit-button-container">
-                    <GreenButton type="submit">{submitLabel}</GreenButton>
+                    <DefaultButton type="submit">{submitLabel}</DefaultButton>
                 </div>
             </form>
         </div>

@@ -1,0 +1,118 @@
+$border-color: #3F3F3F;
+
+.quiz-play-container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+.quiz-play-answer{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    min-width: 30rem;
+    margin-top: 3.375rem;
+    gap:5.4375rem;
+    & .quiz-play-question-statement{
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+}
+
+.quiz-play-question-answers{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.quiz-play-menu{
+    display: flex;
+    width: 28.937rem;
+    flex-direction: column;
+    height: 100%;
+    border-left: 1px solid $border-color;
+    padding-left: 2rem;
+    & .quiz-play-menu-time-container{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:.8rem;
+        padding-top: 5.19rem;
+        & .quiz-play-menu-time-text{
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+        & .quiz-play-menu-time{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            & .quiz-play-menu-time-count{
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+        }
+
+    }
+    & .quiz-play-menu-action-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 1054px) {
+    .page-container{
+        padding: 0;
+    }
+    .quiz-play-answer{
+        padding: 0 1rem;
+    }
+    .quiz-play-answer{
+        min-width: 10rem;
+    }
+    .quiz-play-container{
+        flex-direction: column;
+        gap: 0;
+    }
+    .quiz-play-menu{
+        flex-direction: row;
+        height: fit-content;
+        width: 100%;
+        align-items: center;
+        padding: 1rem;
+        border-left: none;
+        border-top: 2px solid $border-color;
+        & .quiz-play-menu-time-container{
+            gap:0;
+            padding: 0;
+            flex-direction: row;
+            gap: 1rem;
+            flex-wrap: wrap;
+            row-gap: 0rem;
+            align-items: center;
+            & .quiz-play-menu-time-text{
+                font-size: 1rem !important;
+            }
+            & .quiz-play-menu-time{
+                flex-direction: row;
+            }
+            & .quiz-play-menu-time-count{
+                margin-right: .8rem;
+                font-size: 1rem !important;
+            }
+        }
+        & .quiz-play-menu-action-container{
+            width: 10rem;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+    }
+
+}

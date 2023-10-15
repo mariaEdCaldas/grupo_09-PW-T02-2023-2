@@ -1,0 +1,17 @@
+$default-button-color: hsl(115, 36%, 45%);
+
+
+.default-button{
+    width: 9.375rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: $default-button-color;
+    border-radius: 10px;
+    font-weight: 500;
+    color: white;
+    border: solid 2px #3F3F3F;
+    transition: filter .3s ease-in-out;
+    &:hover{
+        filter: brightness(1.1);
+    }
+}
