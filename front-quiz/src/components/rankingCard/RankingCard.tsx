@@ -1,5 +1,5 @@
 import { RankingSimble } from "../../assets/images/RankingSimble";
-import { Ranking, RankingColorEnum, RankingEnum } from "../../models/Ranking";
+import { Ranking, rankingcolorEnum, RankingEnum } from "../../models/Ranking";
 import "./RankingCard.scss";
 
 interface RankingCardProps {
@@ -15,12 +15,12 @@ export default function RankingCard({
     score,
     isCurrentPlayer
 }: RankingCardProps) {
-    const cardColor = RankingColorEnum[`${ranking}` as keyof typeof RankingColorEnum] || RankingColorEnum["default"];
+    const cardColor = rankingcolorEnum[`${ranking}` as keyof typeof rankingcolorEnum] || rankingcolorEnum["default"];
     return (
             <div className={`ranking-card${isCurrentPlayer ? " current-player-rank" :""}`}>
                 <div className="left-side">
                     <div className="play-button-container">
-                        <RankingSimble rankingColor={cardColor}/>
+                        <RankingSimble rankingcolor={cardColor}/>
                     </div>
                     <div className="ranking-Ranking-container ranking-card-bottom-container">
                         <p className="ranking-Ranking">{ranking}</p>

@@ -16,7 +16,7 @@ export default function Router() {
             <Route path="/ranking" Component={Ranking}></Route>
             <Route path="/play" Component={Quiz}></Route>
             <Route path="/create-quiz" Component={QuizBuilder}></Route>
-            <Route path="/create-question" Component={QuestionBuilder}></Route>
+            <Route path="/create-quiz/create-question" Component={QuestionBuilder}></Route>
             <Route path="/play-quiz/:id" Component={Quiz}></Route>
         </Routes>
     );

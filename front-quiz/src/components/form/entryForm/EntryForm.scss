@@ -24,6 +24,13 @@ $submit-button-color-hover: hsl(115, 36%, 55%);
     font-size: 1.25rem;
     margin-bottom: 3.4375rem;
 }
+.entry-form-submit-button-container {
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    margin-top: 2.5rem;
+    margin-left: auto;
+}
 
 @media (max-width: 518px) {
     .entry-form {

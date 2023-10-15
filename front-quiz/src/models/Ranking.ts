@@ -7,7 +7,7 @@ enum RankingEnum {
     "default" = "MEDIEVAL"
 }
 
-enum RankingColorEnum {
+enum rankingcolorEnum {
     "1º" = "#D18641",
     "2º" = "#41A6D1",
     "3º" = "#7C597B",
@@ -16,4 +16,4 @@ enum RankingColorEnum {
 
 
 
-export { type Ranking, RankingEnum, RankingColorEnum}
+export { type Ranking, RankingEnum, rankingcolorEnum}

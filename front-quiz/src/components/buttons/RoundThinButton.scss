@@ -1,0 +1,14 @@
+$round-thin-button-radius: 10px;
+.round-thin-button{
+    border: none;
+    border-radius: $round-thin-button-radius;
+    width: 6.25rem;
+    height: 1.56rem;
+    padding: 0 .5rem;
+    font-size: .75rem;
+    cursor: pointer;
+    transition: filter .3s ease-in-out;
+    &:hover{
+        filter: brightness(1.1);
+    }
+}

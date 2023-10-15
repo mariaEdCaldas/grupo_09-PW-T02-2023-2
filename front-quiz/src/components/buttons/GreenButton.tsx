@@ -2,17 +2,18 @@ import "./GreenButton.scss"
 interface GreenButtonProps {
     children: string;
     type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export default function GreenButton({
     children: label,
-    type,
+    type, onClick
 }: GreenButtonProps) {
     return (
         <button
             type={type || "button"}
             className="green-button"
-            form="login-form"
+            onClick={(onClick && type == "button") ? onClick : undefined}
         >
             {label}
         </button>
