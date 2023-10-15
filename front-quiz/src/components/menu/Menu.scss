@@ -12,15 +12,17 @@ $hover-color: hsl(29, 61%, 40%);
     border-bottom: 1px solid #3F3F3F;
 }
 .menu{
-    width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 .menu-left{
     justify-content: flex-start;
+    margin-right: auto;
 }
 .menu-right{
     justify-content: flex-end;
+
 }
 .menu-items{
     display: flex;
@@ -28,6 +30,8 @@ $hover-color: hsl(29, 61%, 40%);
     gap: 1rem;
 }
 .menu-item{
+    display: flex;
+    align-items: center;
     transition: color .3s ease-in-out;
     &.active{
         color: $active-color;
