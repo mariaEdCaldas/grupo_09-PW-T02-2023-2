@@ -16,6 +16,7 @@ export default function QuestionBuilder() {
                 >
                     <div className="question-builder-name-container">
                         <TextInput required
+                            maxLength={90}
                             label="Enunciado questão"
                             placeholder="Insira o enunciado da questão"
                             id="question-statement"
