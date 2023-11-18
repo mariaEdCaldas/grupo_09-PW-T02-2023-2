@@ -2,12 +2,14 @@ import "./Home.scss";
 import SelectInput from "../../components/form/inputs/selectInput/SelectInput";
 import GameCard from "../../components/gameCard/GameCard";
 import { DifficultyEnum } from "../../models/Difficulty";
+import IsNotLoggedRedirecter from "../../components/isNotLoggedRedirecter/IsNotLoggedRedirecter";
 
 export default function Home() {
     const categoriesOptions = ["Geografia"];
     const difficultyOptions = Object.values(DifficultyEnum)
     return (
         <>
+            <IsNotLoggedRedirecter/>
             <div className="game-selection-container">
                 <div className="game-search-container">
                     <div className="game-search-category-container">

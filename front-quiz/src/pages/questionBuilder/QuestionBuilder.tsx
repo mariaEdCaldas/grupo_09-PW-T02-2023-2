@@ -1,11 +1,14 @@
 import DefaultButton from "../../components/buttons/DefaultButton";
 import TextInput from "../../components/form/inputs/textInput/TextInput";
+import IsNotLoggedRedirecter from "../../components/isNotLoggedRedirecter/IsNotLoggedRedirecter";
 import "./QuestionBuilder.scss";
 
 export default function QuestionBuilder() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => e;
     const maxAnswerLength = 180;
     return (
+        <>
+        <IsNotLoggedRedirecter/>
         <div className="question-builder-wrapper">
             <div className="question-builder-container">
                 <h1 className="question-builder-title">Criar questão</h1>
@@ -86,5 +89,6 @@ export default function QuestionBuilder() {
                 </form>
             </div>
         </div>
+        </>
     );
 }

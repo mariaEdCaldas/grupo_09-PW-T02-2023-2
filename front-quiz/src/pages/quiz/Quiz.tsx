@@ -1,5 +1,6 @@
 import DefaultButton from "../../components/buttons/DefaultButton";
 import QuizAnswerButton from "../../components/buttons/QuizAnswerButton";
+import IsNotLoggedRedirecter from "../../components/isNotLoggedRedirecter/IsNotLoggedRedirecter";
 import "./Quiz.scss";
 
 export default function Quiz() {
@@ -11,6 +12,8 @@ export default function Quiz() {
     const currentTime=30;
     const currentColor = currentTime/totalTime >= 1/3 ? colors.okColor : colors.wrongColor;
     return (
+        <>
+        <IsNotLoggedRedirecter/>
         <div className="quiz-play-container">
             <div className="quiz-play-answer">
                 <h1 className="quiz-play-question-statement">
@@ -68,5 +71,6 @@ export default function Quiz() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
