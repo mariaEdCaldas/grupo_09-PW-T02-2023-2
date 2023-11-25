@@ -1,9 +1,14 @@
 import "./SelectInput.scss";
 
+interface InputOption {
+    value: string;
+    label: string;
+}
+
 interface SelectInputProps {
     id: string;
     label?: string;
-    options: string[];
+    options: InputOption[];
     placeholder?: string;
     value?: string;
     required?: boolean;
@@ -37,8 +42,8 @@ export default function SelectInput(props: SelectInputProps) {
                 {props.options &&
                     props.options.map((option, index) => {
                         return (
-                            <option key={index} value={option}>
-                                {option}
+                             <option key={index} value={option.value}>
+                                {option.label}
                             </option>
                         );
                     })}
@@ -46,3 +51,4 @@ export default function SelectInput(props: SelectInputProps) {
         </div>
     );
 }
+export { type InputOption }
