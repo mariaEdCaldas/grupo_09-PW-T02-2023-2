@@ -67,14 +67,13 @@ $border-color: #3F3F3F;
 }
 
 @media screen and (max-width: 1054px) {
-    .page-container{
-        padding: 0;
-    }
+
     .quiz-play-answer{
         padding: 0 1rem;
     }
     .quiz-play-answer{
         min-width: 10rem;
+        padding-bottom: 6rem;
     }
     .quiz-play-container{
         flex-direction: column;
@@ -83,6 +82,10 @@ $border-color: #3F3F3F;
     .quiz-play-menu{
         flex-direction: row;
         height: fit-content;
+        position: absolute;
+        background-color: #f1f5f9;
+        bottom: 0;
+        left: 0;
         width: 100%;
         align-items: center;
         padding: 1rem;
