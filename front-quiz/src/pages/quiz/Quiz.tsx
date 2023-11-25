@@ -38,7 +38,7 @@ export default function Quiz() {
             setCurrentTime(totalTime);
         }else{
             alert(`FIM!!!\nSua pontuação foi: ${currentPontuacao}`)
-            setUserRank(currentPontuacao).then(()=>{
+            setUserRank(quizId||"", currentPontuacao).then(()=>{
                 navigateTo("/")
             }).catch((e)=>{
                 console.log(e)

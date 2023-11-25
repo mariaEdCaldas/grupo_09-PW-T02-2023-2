@@ -5,19 +5,40 @@ import {
     getDoc,
     doc,
     setDoc,
+    addDoc,
+    query,
+    where,
+    limit,
 } from "firebase/firestore";
 import { db } from "./firebaseConfig";
 import { auth } from "./firebaseConfig";
 import { RankingData } from "../models/RankingData";
 
-export async function setUserRank(pontuacaoNova: number) {
-    console.log(pontuacaoNova);
-    console.log("Request received! Iha!");
+async function addMatchInfo(quizID:string, userID:string){
+    await addDoc(collection(db, "partidas"), {
+        quizID: quizID,
+        userID: userID,
+    });
+}
+
+async function playerPlayedQuiz(quizID:string, userID:string){
+    const queryRes = await query(collection(db, "partidas"), where("quizID", "==", quizID), where("userID", "==", userID), limit(1));
+    const querySnapshot = await getDocs(queryRes);
+    return (querySnapshot.size > 0);
+}
+
+export async function setUserRank(quizID:string, pontuacaoNova: number) {
     const email = auth.currentUser?.email;
+    const userID = auth.currentUser?.uid;
     const username = auth.currentUser?.displayName;
-    if (!email) return;
+    
+    if ((!email) || (!userID) || (!quizID)) return;
+    if(await playerPlayedQuiz(quizID, userID)) return;
+
     const userRankingDoc = await getDoc(doc(db, "ranking", email));
     const userRankingData = userRankingDoc.data();
+    await addMatchInfo(quizID, userID);
+
     if (userRankingData) {
         console.log("Updating doc");
         console.log(userRankingData);
@@ -32,6 +53,7 @@ export async function setUserRank(pontuacaoNova: number) {
         });
     }
 }
+
 
 export async function getRank(): Promise<RankingData[]> {
     const querySnapshot = await getDocs(collection(db, "ranking"));
