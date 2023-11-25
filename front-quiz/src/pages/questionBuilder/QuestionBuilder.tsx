@@ -1,11 +1,40 @@
+import { useNavigate } from "react-router-dom";
 import DefaultButton from "../../components/buttons/DefaultButton";
 import TextInput from "../../components/form/inputs/textInput/TextInput";
 import IsNotLoggedRedirecter from "../../components/isNotLoggedRedirecter/IsNotLoggedRedirecter";
+import { addStoredQuestion } from "../../logic/quizEditStorage";
+import { Questao } from "../../models/Quiz";
 import "./QuestionBuilder.scss";
 
 export default function QuestionBuilder() {
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => e;
     const maxAnswerLength = 180;
+    const navigateTo = useNavigate();
+    const handleSaveQuestion = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const question : Questao = {
+            enunciado: document.querySelector<HTMLInputElement>("#question-statement")!.value,
+            respostas: [
+                {
+                    resposta: document.querySelector<HTMLInputElement>("#question-answer-a")!.value,
+                    correta: document.querySelector<HTMLInputElement>("#a")!.checked
+                },
+                {
+                    resposta: document.querySelector<HTMLInputElement>("#question-answer-b")!.value,
+                    correta: document.querySelector<HTMLInputElement>("#b")!.checked
+                },
+                {
+                    resposta: document.querySelector<HTMLInputElement>("#question-answer-c")!.value,
+                    correta: document.querySelector<HTMLInputElement>("#c")!.checked
+                },
+                {
+                    resposta: document.querySelector<HTMLInputElement>("#question-answer-d")!.value,
+                    correta: document.querySelector<HTMLInputElement>("#d")!.checked
+                }
+            ]
+        }
+        addStoredQuestion(question);
+        navigateTo("/create-quiz");
+    }
     return (
         <>
         <IsNotLoggedRedirecter/>
@@ -15,7 +44,7 @@ export default function QuestionBuilder() {
                 <form
                     id="question-builder-form"
                     className="question-builder-form"
-                    onSubmit={handleSubmit}
+                    onSubmit={handleSaveQuestion}
                 >
                     <div className="question-builder-name-container">
                         <TextInput required
