@@ -19,11 +19,11 @@ export default function Registrar() {
     
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // const name = e.currentTarget.username.value;
+        const username = e.currentTarget.username.value;
         const email = e.currentTarget.email.value;
         const password = e.currentTarget.password.value;
         try{
-            const authRes = await createUser(email, password)
+            const authRes = await createUser(username,email, password)
             if(authRes.getSuccess())
                 navigateTo("/")
         }

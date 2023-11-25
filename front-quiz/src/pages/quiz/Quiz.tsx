@@ -6,6 +6,7 @@ import "./Quiz.scss";
 import { useEffect, useState } from "react";
 import { Quiz } from "../../models/Quiz";
 import { getQuizById } from "../../services/quiz";
+import { setUserRank } from "../../services/ranking";
 
 export default function Quiz() {
     const navigateTo = useNavigate();
@@ -31,12 +32,18 @@ export default function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
 
     const nextQuestion = (_pontuacao?:number) => {
+        const currentPontuacao = _pontuacao||pontuacao;
         if (currentQuestion+1 < currentQuiz.questoes.length){
             setCurrentQuestion(currentQuestion + 1);
             setCurrentTime(totalTime);
         }else{
-            alert(`FIM!!!\nSua pontuação foi: ${_pontuacao||pontuacao}`)
-            navigateTo("/")
+            alert(`FIM!!!\nSua pontuação foi: ${currentPontuacao}`)
+            setUserRank(currentPontuacao).then(()=>{
+                navigateTo("/")
+            }).catch((e)=>{
+                console.log(e)
+                alert("Erro ao salvar pontuação")
+            })
         }
     }
 
