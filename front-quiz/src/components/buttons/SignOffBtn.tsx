@@ -12,6 +12,8 @@ export default function SignOffBtn({isLogged, setIsLogged}: SignOffBtnProps){
     const navigateTo = useNavigate()
     const handleSignOff = async () => {
         await signOut();
+        sessionStorage.clear();
+        localStorage.clear();
         if(isLogged){
             setIsLogged(false)
             navigateTo("/login")

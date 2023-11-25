@@ -4,7 +4,7 @@ interface DefaultButtonProps {
     type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
     backgroundColor?: string;
     color?: string;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    onClick?: () => void;
 }
 
 export default function DefaultButton({

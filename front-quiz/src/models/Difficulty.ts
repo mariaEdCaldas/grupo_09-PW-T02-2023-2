@@ -12,6 +12,4 @@ enum DifficultyColorEnum {
     Impossível = "#B93C3C"
 }
 
-
-
 export { type Difficulty, DifficultyEnum, DifficultyColorEnum}
