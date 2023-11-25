@@ -42,8 +42,8 @@ export default function SelectInput(props: SelectInputProps) {
                 {props.options &&
                     props.options.map((option, index) => {
                         return (
-                            <option key={index} value={option.value}>
-                                {option.label}
+                            <option key={index} value={option}>
+                                {option}
                             </option>
                         );
                     })}
@@ -51,5 +51,6 @@ export default function SelectInput(props: SelectInputProps) {
         </div>
     );
 }
+export { type InputOption }
 
 export { type InputOption }
