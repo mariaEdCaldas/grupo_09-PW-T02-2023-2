@@ -1,0 +1,14 @@
+.quiz-builder-form-question-item{
+    width: 100%;
+    margin: 1rem 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    & .quiz-builder-form-question-item-title{
+        text-align: start;
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
