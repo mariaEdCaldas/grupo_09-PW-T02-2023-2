@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import IsNotLoggedRedirecter from "../../components/isNotLoggedRedirecter/IsNotLoggedRedirecter"
 import RankingCard from "../../components/rankingCard/RankingCard"
 import "./Ranking.scss"
-import { RankingData, getRank } from "../../services/ranking";
+import { getRank } from "../../services/ranking";
+import { RankingData } from "../../models/RankingData";
 
 export default function Ranking(){
     const [rankingData, setRankingData] = useState<RankingData[]>([]);

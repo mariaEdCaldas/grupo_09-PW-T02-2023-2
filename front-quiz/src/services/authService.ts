@@ -1,10 +1,11 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { AuthResponse } from "../models/AuthResponse";
 import {auth} from "./firebaseConfig"
 
-async function createUser(email: string, password: string) : Promise<AuthResponse>{
+async function createUser(username:string, email: string, password: string) : Promise<AuthResponse>{
     try{
-        await createUserWithEmailAndPassword(auth, email, password)
+        const userCreated = await createUserWithEmailAndPassword(auth, email, password)
+        await updateProfile(userCreated.user, { displayName: username});
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     }catch(error: any){
         console.log(error)
