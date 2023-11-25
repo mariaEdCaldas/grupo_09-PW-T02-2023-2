@@ -1,56 +1,7 @@
 import { RankingSimble } from "../../assets/images/RankingSimble";
 import { Ranking, rankingcolorEnum, RankingEnum } from "../../models/Ranking";
 import "./RankingCard.scss";
-import { getRank, RankingData } from '../../services/ranking'; 
-import { useState, useEffect } from 'react';
-import { db } from "../../services/firebaseConfig";
 
-function Componente(){
-    console.log('Rendering Componente'); 
-    const [rankingData, setRankingData] = useState<RankingData[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [forceRerender, setForceRerender] = useState(false);
-
-    useEffect(()=>{
-        let isMounted = true;   
-        async function fetchRanking(){
-            try {
-                const rankingArray = await getRank();
-                console.log('Ranking Array:', rankingArray);
-                if (isMounted) {
-                    console.log('Setting ranking data:', rankingArray);
-                    setRankingData(rankingArray);
-                    setLoading(false);
-                    setForceRerender(prevState => !prevState);
-                }          
-            }catch (error){
-                console.error('Error fetching ranking:', error);
-            }
-        }  
-        fetchRanking(); 
-        return ()=>{
-            isMounted = false;
-        };
-    },[forceRerender]);
-    console.log('Ranking Data:', rankingData);
-
-    return (
-        <div>
-            {loading ? (
-            <p>Loading...</p>):(
-            
-                rankingData.map((rankingItem: RankingData) => (
-                <RankingCard
-                key={rankingItem.user}
-                name={rankingItem.user}
-                ranking={ `${rankingItem.ranking}º` as `${number}\u00BA` }
-                score={rankingItem.pontuacao}/>
-                ))
-            )}
-        </div>
-    );
-} export { Componente };
-  
 interface RankingCardProps{
     name: string;
     ranking: Ranking;
@@ -64,7 +15,6 @@ export default function RankingCard({
     score,
     isCurrentPlayer
 }: RankingCardProps) {
-    console.log("Rendering RankingCard");
     const cardColor =
     rankingcolorEnum[`${ranking}` as keyof typeof rankingcolorEnum] ||
     rankingcolorEnum['default'];
