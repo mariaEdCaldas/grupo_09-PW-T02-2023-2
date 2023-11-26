@@ -57,7 +57,6 @@ export default function QuizBuilder() {
         getCategories().then(()=>{
             setTimeout(() => {
             if(quizState && formRef.current) {
-                console.log(quizState)
                 formRef.current.querySelector<HTMLInputElement>("#quiz-name")!.value = quizState.nome;
                 formRef.current.querySelector<HTMLInputElement>("#quiz-category")!.value = quizState.categoria.id||"";
                 formRef.current.querySelector<HTMLInputElement>("#quiz-difficulty")!.value = quizState.dificuldade;
