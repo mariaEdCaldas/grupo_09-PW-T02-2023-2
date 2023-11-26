@@ -3,7 +3,7 @@ import DefaultButton from "../../components/buttons/DefaultButton";
 import QuizAnswerButton from "../../components/buttons/QuizAnswerButton";
 import IsNotLoggedRedirecter from "../../components/isNotLoggedRedirecter/IsNotLoggedRedirecter";
 import "./Quiz.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Quiz } from "../../models/Quiz";
 import { getQuizById } from "../../services/quiz";
 import { setUserRank } from "../../services/ranking";
@@ -22,6 +22,8 @@ export default function Quiz() {
     const [pontuacao, setPontuacao] = useState(0);
     const [rodadasSemErro, setRodadasSemErro] = useState(0);
     const [currentTime, setCurrentTime] = useState(totalTime); 
+    const [showAnswer, setShowAnswer] = useState(false);
+    const timerController = useRef<NodeJS.Timeout>();
     
     const currentColor =
         currentTime / totalTime >= 1 / 3 ? colors.okColor : colors.wrongColor;
@@ -45,16 +47,18 @@ export default function Quiz() {
                 alert("Erro ao salvar pontuação")
             })
         }
+        setShowAnswer(false);
     }
 
     const handleAcerto = () => {
-        alert("acertou")
+        console.log("a")
         const pontuacaoQuestao = totalPontPorQuestao + (totalPontPorQuestao * multiplicadorSemErro * rodadasSemErro );
         setPontuacao(pontuacao + pontuacaoQuestao);
         setRodadasSemErro(rodadasSemErro + 1);
         nextQuestion(pontuacao + pontuacaoQuestao);
     }
     const handleErro = () => {
+        console.log("e")
         setRodadasSemErro(0);
         nextQuestion();
     }
@@ -72,10 +76,11 @@ export default function Quiz() {
           nextQuestion();
           return;
         }
-    
+        if (showAnswer) return;
         const timerId = setTimeout(() => {
           setCurrentTime(time => time - 1);
         }, 1000);
+        timerController.current = timerId;
     
         return () => clearTimeout(timerId);
       } );
@@ -98,17 +103,30 @@ export default function Quiz() {
                                     return (
                                         <div className="quiz-play-question-answer-container" key={idx}>
                                             <QuizAnswerButton
-                                                backgroundColor="#2F5267"
+                                                backgroundColor={
+                                                    showAnswer ? (
+                                                        answer.correta
+                                                            ? colors.okColor
+                                                            : colors.wrongColor
+                                                    ) : (
+                                                        "#2F5267"
+                                                    )
+                                                }
                                                 color="white"
                                                 answerLetter={
                                                     answersSimbles[idx]
                                                 }
-                                                onClick={
+                                                onClick={                                            
                                                     (()=>{
-                                                        if(answer.correta)
-                                                            handleAcerto()
-                                                        else
-                                                            handleErro()
+                                                        if(!showAnswer) setShowAnswer(true)
+                                                        if(timerController.current) clearTimeout(timerController.current)
+                                                        setTimeout(()=>{
+                                                            console.log("answer")
+                                                            if(answer.correta)
+                                                                handleAcerto()
+                                                            else
+                                                                handleErro()
+                                                        }, 3000)
                                                     })
                                                 }
                                                 content={answer.resposta || ""}
