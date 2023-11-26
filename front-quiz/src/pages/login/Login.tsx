@@ -21,7 +21,6 @@ export default function Login() {
         
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // const name = e.currentTarget.username.value;
         const email = e.currentTarget.email.value;
         const password = e.currentTarget.password.value;
         try{
