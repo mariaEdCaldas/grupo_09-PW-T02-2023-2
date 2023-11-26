@@ -54,14 +54,19 @@ export default function QuizBuilder() {
     useEffect(() => {
         //gets stored state from sessionStorage
         const quizState = getStoredQuizEdit();
-        if(quizState && formRef.current) {
-            //sets form values
-            formRef.current.querySelector<HTMLInputElement>("#quiz-name")!.value = quizState.nome;
-            formRef.current.querySelector<HTMLInputElement>("#quiz-category")!.value = quizState.categoria.nome;
-            formRef.current.querySelector<HTMLInputElement>("#quiz-difficulty")!.value = quizState.dificuldade;
-        }
+        getCategories().then(()=>{
+            setTimeout(() => {
+            if(quizState && formRef.current) {
+                console.log(quizState)
+                formRef.current.querySelector<HTMLInputElement>("#quiz-name")!.value = quizState.nome;
+                formRef.current.querySelector<HTMLInputElement>("#quiz-category")!.value = quizState.categoria.id||"";
+                formRef.current.querySelector<HTMLInputElement>("#quiz-difficulty")!.value = quizState.dificuldade;
+                
+            }
+            },200);
+        })
         setQuestions(quizState?.questoes || []);
-        getCategories()
+        
     }
     , [formRef]);
     
