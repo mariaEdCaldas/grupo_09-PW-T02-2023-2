@@ -30,7 +30,6 @@ export default function QuizBuilder() {
     const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         saveCurrentQuizState();
-        console.log(event);
         const currentFormState = getCurrentFormState()
         if(currentFormState.questoes.length === 0){
             alert("O questionário deve ter pelo menos uma questão");

@@ -40,13 +40,11 @@ export async function setUserRank(quizID:string, pontuacaoNova: number) {
     await addMatchInfo(quizID, userID);
 
     if (userRankingData) {
-        console.log("Updating doc");
         console.log(userRankingData);
         await updateDoc(userRankingDoc.ref,{
             pontuacao: (userRankingData as unknown as RankingData).pontuacao + pontuacaoNova,
         });
     } else {
-        console.log("Adding doc");
         await setDoc(doc(db, "ranking", email), { 
             user: username||"unknown user", //resolvi por deixar o maluco sem nome como unknown user. Se o cabra burlar o registro, é o mínimo que o sistema pode permitir pro cabra :(
             pontuacao: pontuacaoNova,

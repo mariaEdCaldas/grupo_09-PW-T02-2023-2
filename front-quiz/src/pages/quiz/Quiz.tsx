@@ -51,14 +51,12 @@ export default function Quiz() {
     }
 
     const handleAcerto = () => {
-        console.log("a")
         const pontuacaoQuestao = totalPontPorQuestao + (totalPontPorQuestao * multiplicadorSemErro * rodadasSemErro );
         setPontuacao(pontuacao + pontuacaoQuestao);
         setRodadasSemErro(rodadasSemErro + 1);
         nextQuestion(pontuacao + pontuacaoQuestao);
     }
     const handleErro = () => {
-        console.log("e")
         setRodadasSemErro(0);
         nextQuestion();
     }
