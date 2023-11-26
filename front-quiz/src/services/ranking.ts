@@ -40,7 +40,7 @@ export async function setUserRank(quizID:string, pontuacaoNova: number) {
     await addMatchInfo(quizID, userID);
 
     if (userRankingData) {
-        console.log(userRankingData);
+        console.error(userRankingData);
         await updateDoc(userRankingDoc.ref,{
             pontuacao: (userRankingData as unknown as RankingData).pontuacao + pontuacaoNova,
         });

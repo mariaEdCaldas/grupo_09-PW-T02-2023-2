@@ -28,7 +28,7 @@ export default function Registrar() {
                 navigateTo("/")
         }
         catch(error){
-            console.log(error);
+            console.error(error);
         }
     }
 

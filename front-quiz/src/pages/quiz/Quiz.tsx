@@ -43,7 +43,7 @@ export default function Quiz() {
             setUserRank(quizId||"", currentPontuacao).then(()=>{
                 navigateTo("/")
             }).catch((e)=>{
-                console.log(e)
+                console.error(e)
                 alert("Erro ao salvar pontuação")
             })
         }
@@ -119,7 +119,6 @@ export default function Quiz() {
                                                         if(!showAnswer) setShowAnswer(true)
                                                         if(timerController.current) clearTimeout(timerController.current)
                                                         setTimeout(()=>{
-                                                            console.log("answer")
                                                             if(answer.correta)
                                                                 handleAcerto()
                                                             else

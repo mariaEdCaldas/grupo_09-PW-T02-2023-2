@@ -30,7 +30,7 @@ export default function Login() {
                 navigateTo("/")
         }
         catch(error){
-            console.log(error);
+            console.error(error);
         }
     }
     return (

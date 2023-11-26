@@ -8,7 +8,7 @@ async function createUser(username:string, email: string, password: string) : Pr
         await updateProfile(userCreated.user, { displayName: username});
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     }catch(error: any){
-        console.log(error)
+        console.error(error)
         return new AuthResponse(false, {message: error.message})
     }
     return new AuthResponse(true)
@@ -19,7 +19,7 @@ async function signIn(email: string, password: string) : Promise<AuthResponse>{
         await signInWithEmailAndPassword(auth, email, password)
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     }catch(error: any){
-        console.log(error)
+        console.error(error)
         return new AuthResponse(false, {message: error.message})
     }
     return new AuthResponse(true)
@@ -32,7 +32,7 @@ async function signOut() : Promise<AuthResponse>{
         }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     }catch(error: any){
-        console.log(error)
+        console.error(error)
         return new AuthResponse(false, {message: error.message})
     }
     return new AuthResponse(true)
